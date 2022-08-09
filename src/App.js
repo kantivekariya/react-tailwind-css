@@ -8,7 +8,7 @@ import Category from "./components/Category";
 
 function App() {
   return (
-    <div>
+    <div className="max-w-[1640px] mx-auto">
       <Navbar />
       <Banner />
       <HeadlineCards />

@@ -11,10 +11,41 @@ import { MdFavorite, MdHelp } from "react-icons/md";
 import { FaUserFriends, FaWallet } from "react-icons/fa";
 import { useState } from "react";
 
+const drawerOption = [
+  {
+    name: "Orders",
+    icon: TbTruckDelivery,
+  },
+  {
+    name: "Favorite",
+    icon: MdFavorite,
+  },
+  {
+    name: "Wallet",
+    icon: FaWallet,
+  },
+  {
+    name: "Help",
+    icon: MdHelp,
+  },
+  {
+    name: "Promotions",
+    icon: AiFillTag,
+  },
+  {
+    name: "Best One",
+    icon: BsFillSaveFill,
+  },
+  {
+    name: "Invited Friends",
+    icon: FaUserFriends,
+  },
+];
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   return (
-    <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4">
+    <div className="flex justify-between items-center p-4">
       <div className="flex items-center">
         <div onClick={() => setNav(!nav)} className="cursor-pointer">
           <AiOutlineMenu size={30} />
@@ -68,27 +99,11 @@ const Navbar = () => {
         </h2>
         <nav>
           <ul className="flex flex-col p-4 text-gray-800">
-            <li className="text-xl py-4 flex">
-              <TbTruckDelivery size={25} className="mr-4" /> Orders
-            </li>
-            <li className="text-xl py-4 flex">
-              <MdFavorite size={25} className="mr-4" /> Favorite
-            </li>
-            <li className="text-xl py-4 flex">
-              <FaWallet size={25} className="mr-4" /> Wallet
-            </li>
-            <li className="text-xl py-4 flex">
-              <MdHelp size={25} className="mr-4" /> Help
-            </li>
-            <li className="text-xl py-4 flex">
-              <AiFillTag size={25} className="mr-4" /> Promotions
-            </li>
-            <li className="text-xl py-4 flex">
-              <BsFillSaveFill size={25} className="mr-4" /> Best One
-            </li>
-            <li className="text-xl py-4 flex">
-              <FaUserFriends size={25} className="mr-4" /> Invited Friends
-            </li>
+            {drawerOption.map((item) => (
+              <li className="text-xl py-4 flex cursor-pointer hover:bg-gray-100/50 hover:text-black hover:rounded-lg">
+                <item.icon size={25} className="mr-4" /> {item.name}
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

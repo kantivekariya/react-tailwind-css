@@ -2,98 +2,67 @@ import React from "react";
 import { useState } from "react";
 import { data } from "../data/data";
 
+/* Category button array */
+const categoryFilterBtn = ["All", "Burger", "Pizza", "Salad", "Chicken"];
+
+/* Price list array */
+const itemsPrice = ["$", "$$", "$$$", "$$$$"];
+
 const Food = () => {
   const [foods, setFoods] = useState(data);
 
-  /* Filter */
+  /* Filter By Category */
   const filterByCategory = (category) => {
     setFoods(data.filter((item) => item.category === category.toLowerCase()));
   };
 
+  /* Filter By Price */
   const filterByPrice = (price) => {
     setFoods(data.filter((item) => item.price === price));
   };
 
   return (
-    <div className="max-w-[1640px] m-auto px-4 py-12">
+    <div className="px-4 py-12">
       <h1 className="text-orange-600 font-bold text-4xl text-center">
         Top Rated Menu Items
       </h1>
       <div className="flex flex-col lg:flex-row justify-between">
+        {/* Filter By Category */}
         <div>
-          <p className="font-bold text-gray-700">Filter Type</p>
+          <p className="font-bold text-gray-700">Filter By Category</p>
           <div className="flex justify-between flex-wrap">
-            <button
-              onClick={() => setFoods(data)}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
-            >
-              All
-            </button>
-            <button
-              onClick={() => filterByCategory("Burger")}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
-            >
-              Burgers
-            </button>
-            <button
-              onClick={() => filterByCategory("Pizza")}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
-            >
-              Pizza
-            </button>
-            <button
-              onClick={() => filterByCategory("Salad")}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
-            >
-              Salads
-            </button>
-            <button
-              onClick={() => filterByCategory("Chicken")}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
-            >
-              Chicken
-            </button>
+            {categoryFilterBtn.map((item, index) => (
+              <button
+                key={index}
+                onClick={() =>
+                  item === "All" ? setFoods(data) : filterByCategory(item)
+                }
+                className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
+              >
+                {item}
+              </button>
+            ))}
           </div>
         </div>
 
+        {/* Filter By Prices */}
         <div>
-          <p className="font-bold text-gray-700">Filter Prices</p>
+          <p className="font-bold text-gray-700">Filter By Prices</p>
           <div className="flex justify-between max-w-[390px] w-full">
-            <button
-              onClick={() => filterByPrice("$")}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
-            >
-              $
-            </button>
-            <button
-              onClick={() => filterByPrice("$$")}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
-            >
-              $$
-            </button>
-            <button
-              onClick={() => filterByPrice("$$$")}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
-            >
-              $$$
-            </button>
-            <button
-              onClick={() => filterByPrice("$$$$")}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
-            >
-              $$$$
-            </button>
-            <button
-              onClick={() => filterByPrice("$$$$$")}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
-            >
-              $$$$$
-            </button>
+            {itemsPrice.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => filterByPrice(item)}
+                className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
+              >
+                {item}
+              </button>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Display foods */}
+      {/* Foods Cards */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
         {foods.map((item, index) => (
           <div

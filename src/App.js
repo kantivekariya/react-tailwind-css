@@ -3,6 +3,8 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
 import HeadlineCards from "./components/HeadlineCard";
+import Food from "./components/Foods";
+import Category from "./components/Category";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Navbar />
       <Banner />
       <HeadlineCards />
+      <Food />
+      <Category />
     </div>
   );
 }

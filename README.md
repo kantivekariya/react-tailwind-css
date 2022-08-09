@@ -2,7 +2,7 @@
 Best Eats
 
 ## Demo link:
-[Best Eats](https://google.com)
+[Best Eats](https://best-eats-food-ordering.netlify.app/)
 
 ## Table of Content:
 

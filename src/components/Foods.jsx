@@ -37,7 +37,7 @@ const Food = () => {
                 onClick={() =>
                   item === "All" ? setFoods(data) : filterByCategory(item)
                 }
-                className="m-1 border-[#3FC1CB] text-[#3FC1CB] hover:bg-[#3FC1CB] hover:text-white"
+                className="m-1 px-4 border-[#3FC1CB] text-[#3FC1CB] hover:bg-[#daf3f5] focus:bg-[#3FC1CB] focus:text-white focus:font-medium hover:text-black hover:font-medium"
               >
                 {item}
               </button>
@@ -53,7 +53,7 @@ const Food = () => {
               <button
                 key={index}
                 onClick={() => filterByPrice(item)}
-                className="m-1 border-[#3FC1CB] text-[#3FC1CB] hover:bg-[#3FC1CB] hover:text-white"
+                className="m-1 px-4 border-[#3FC1CB] text-[#3FC1CB] hover:bg-[#daf3f5] focus:bg-[#3FC1CB] focus:text-white focus:font-medium hover:text-black hover:font-medium"
               >
                 {item}
               </button>

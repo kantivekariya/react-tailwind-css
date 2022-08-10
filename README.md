@@ -1,5 +1,5 @@
 # Project Title
-Best Eats
+Fast Food
 
 ## Demo link:
 [Best Eats](https://best-eats-food-ordering.netlify.app/)
@@ -13,7 +13,7 @@ Best Eats
 - [License](#license)
 
 ## About The App
-Best Eats is Food Ordering web app.
+Fast Food is Food Ordering web app.
 
 ## Screenshots
 
@@ -25,7 +25,7 @@ Best Eats is Food Ordering web app.
 ![2022-08-09_18-15](https://user-images.githubusercontent.com/29365336/183650288-3f37e5b5-cf5f-48d4-87da-24cf1d5c9b49.png)
 
 ## Technologies
-Best Eats is creating using [ReactJs](https://reactjs.org/) and [Tailwind CSS](https://tailwindcss.com/)
+Fast Food is creating using [ReactJs](https://reactjs.org/) and [Tailwind CSS](https://tailwindcss.com/)
 
 ## Setup
 - clone this project using `git clone git@github.com:kantivekariya/react-tailwind-css.git`

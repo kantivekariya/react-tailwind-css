@@ -23,7 +23,7 @@ const Food = () => {
 
   return (
     <div className="px-4 py-12">
-      <h1 className="text-orange-600 font-bold text-4xl text-center">
+      <h1 className="text-black-600 font-bold text-4xl text-center">
         Top Rated Menu Items
       </h1>
       <div className="flex flex-col lg:flex-row justify-between">
@@ -37,7 +37,7 @@ const Food = () => {
                 onClick={() =>
                   item === "All" ? setFoods(data) : filterByCategory(item)
                 }
-                className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
+                className="m-1 border-[#3FC1CB] text-[#3FC1CB] hover:bg-[#3FC1CB] hover:text-white"
               >
                 {item}
               </button>
@@ -53,7 +53,7 @@ const Food = () => {
               <button
                 key={index}
                 onClick={() => filterByPrice(item)}
-                className="m-1 border-orange-600 text-orange-600 hover:bg-orange-500 hover:text-white"
+                className="m-1 border-[#3FC1CB] text-[#3FC1CB] hover:bg-[#3FC1CB] hover:text-white"
               >
                 {item}
               </button>
@@ -77,7 +77,7 @@ const Food = () => {
             <div className="flex justify-between px-2 py-4">
               <p className="font-bold">{item.name}</p>
               <p>
-                <span className="bg-orange-500 text-white p-1 rounded-full">
+                <span className="bg-[#3FC1CB] text-white p-1 rounded-full">
                   {item.price}
                 </span>
               </p>
